@@ -94,8 +94,7 @@ conda activate adaseq
 ```
 
 * **Data Augmentation & Preprocessing**
-  We augment the initial **500 labeled samples** using an LLM to generate **15k military-domain NER samples**. Please refer to the code in `NER_Aug/LLM_augment.py`
-  The augmented dataset is stored in `data/CCKS_NER_Aug`.
+  We augment the initial **500 labeled samples** using an LLM to generate **15k military-domain NER samples**. Please refer to the code `NER_Aug/LLM_augment.py`. The augmented dataset is stored in `data/CCKS_NER_Aug`.
   Data is formatted into CoNLL, split into **train (3/4)** and **dev (1/4)**.
 
 ```bash
