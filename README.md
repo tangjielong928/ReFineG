@@ -13,7 +13,7 @@ cuda: 12.2
 Recommended GPU resources: 4 × NVIDIA A100 SXM4 / 80GB
 ```
 
-Since the **AdaSeq** framework and **vLLM** framework may have dependency conflicts, we strongly recommend setting them up in **two separate conda environments**. This ensures reproducibility and does not affect the usage of the project.
+Since the supervised model training (AdaSeq sequence labeling framework we used) and vLLM framework may have dependency conflicts, we strongly recommend setting them up in **two separate conda environments**. This ensures reproducibility and does not affect the usage of the project.
 
 **Env 1: AdaSeq environment**
 
