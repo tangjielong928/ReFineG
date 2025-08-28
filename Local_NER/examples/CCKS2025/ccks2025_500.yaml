@@ -1,0 +1,52 @@
+experiment:
+  exp_dir: experiments/
+  exp_name: CCKS2025
+  seed: 42
+
+task: named-entity-recognition
+
+dataset:
+  data_file:
+    train: /data1/tangjielong/ccks2025_official/data/CCKS_NER_Aug/CCKS_Aug_train.conll #替换为你data/CCKS_NER_Aug/CCKS_Aug_train.conll所在的绝对路径
+    valid: /data1/tangjielong/ccks2025_official/data/CCKS_NER_Aug/CCKS_Aug_dev.conll #替换为你data/CCKS_NER_Aug/CCKS_Aug_dev.conll所在的绝对路径
+    test: /data1/tangjielong/ccks2025_official/data/CCKS_NER_Aug/CCKS_test.conll #替换为你上一步生成的测试集conll所在的绝对路径
+  data_type: conll
+
+preprocessor:
+  type: sequence-labeling-preprocessor
+  model_dir: xlm-roberta-large
+  max_length: 128
+
+data_collator: SequenceLabelingDataCollatorWithPadding
+
+model:
+  type: sequence-labeling-model
+  embedder:
+    model_name_or_path: xlm-roberta-large
+  word_dropout: 0.1
+  use_crf: true
+
+train:
+  max_epochs: 15
+  dataloader:
+    batch_size_per_gpu: 32
+  optimizer:
+    type: AdamW
+    lr: 1.0e-5
+    param_groups:
+      - regex: crf
+        lr: 5.0e-2
+  lr_scheduler:
+    type: LinearLR
+    start_factor: 1.0
+    end_factor: 0.0
+    total_iters: 10
+
+evaluation:
+  dataloader:
+    batch_size_per_gpu: 32
+  metrics:
+    - type: ner-metric
+    - type: ner-dumper
+      model_type: sequence_labeling
+      dump_format: conll

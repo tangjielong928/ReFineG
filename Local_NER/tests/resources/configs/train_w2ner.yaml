@@ -1,0 +1,54 @@
+work_dir: tests/resources/regression
+
+task: named-entity-recognition
+
+dataset:
+  data_file: 'https://www.modelscope.cn/api/v1/datasets/izhx404/toy_msra/repo/files?Revision=master&FilePath=toy_msra.zip'
+  data_type: conll
+  labels:
+    type: count_span_labels
+
+preprocessor:
+  type: word-extraction-preprocessor
+  model_dir: damo/nlp_structbert_backbone_base_std
+  max_length: 150
+
+data_collator: WordExtractionDataCollatorWithPadding
+
+model:
+  type: w2ner-model
+  embedder:
+    model_name_or_path: damo/nlp_structbert_backbone_base_std
+  lstm_encoder:
+    hidden_size: 384
+    bidirectional: true
+  cnn_encoder:
+    channels: 96
+    dropout: 0.0
+    dilation: [1, 2, 3]
+  emb_dropout: 0.0
+  out_dropout: 0.0
+
+train:
+  max_epochs: 1
+  dataloader:
+    batch_size_per_gpu: 4
+  optimizer:
+    type: AdamW
+    lr: 1.0e-3
+    param_groups:
+      - regex: transformer_model
+        lr: 1.0e-5
+    options:
+      grad_clip:
+        max_norm: 1.0
+  lr_scheduler:
+    type: LinearLR
+    start_factor: 1.0
+    end_factor: 0.0
+    total_iters: 20
+
+evaluation:
+  dataloader:
+    batch_size_per_gpu: 16
+  metrics: span-extraction-metric

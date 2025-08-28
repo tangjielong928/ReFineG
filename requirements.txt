@@ -1,0 +1,11 @@
+certifi==2025.8.3
+charset-normalizer==3.4.3
+idna==3.10
+modelscope==1.25.0
+numpy==2.3.2
+pip==25.1
+requests==2.32.4
+setuptools==78.1.1
+tqdm==4.67.1
+urllib3==2.5.0
+wheel==0.45.1

@@ -1,0 +1,33 @@
+[Entity Type Description] Here are 6 named entity types you need to identify:
+1. vehicle: Ground-based machines for military or specialized operations, including but not limited to:
+- Infantry fighting vehicles (e.g., PUMA, Schützenpanzer Marder)
+- Tanks and armored vehicles (e.g., Leopard 2 series, GTK Boxer)
+- Engineering/utility vehicles (e.g., Dachs, Pionierpanzer Dachs)
+- Light tactical vehicles (e.g., Fennek, Dingo, Wiesel TOW)
+- Artillery carriers (e.g., Panzerhaubitze 2000)
+2. aircraft: Flying machines for military or mission-specific use, including but not limited to:
+- Fighter jets (e.g., Eurofighter, F-16C/D, Tornado, Rafale M)
+- Transport aircraft (e.g., Airbus A400M, Transall C-160, Antonow AN-124)
+- Helicopters (e.g., NH-90, CH-53, Tiger, Sea Lynx MK88A)
+- Special-mission aircraft (e.g., Boeing E-3 [AEW&C], Gulfstream G-550 [surveillance])
+- Unmanned aerial vehicles (UAVs) (e.g., KZO, Heron 1)
+3. vessel: Watercraft for military or operational support, including but not limited to:
+- Warships (e.g., Korvette F 262, Submarine U32)
+- Support vessels (e.g., Einsatzgruppenversorger [logistics/supply])
+4. weapon: Devices or systems designed for combat or defense, including but not limited to:
+- Firearms (e.g., G36k, MG5, Scharfschützengewehr G22A2)
+- Rockets/missiles (e.g., MARS [rocket system], PATRIOT, RBS15 Mk3, Evolved Sea Sparrow Missile)
+- Portable weapons (e.g., Fliegerfaust 2 Stinger, MILAN)
+5. location: Geographical or geopolitical areas, including but not limited to:
+- Countries/regions (e.g., Syria, Germany, Africa)
+- Subnational regions (e.g., southern Germany, Gaza Strip, Alps)
+- Bodies of water (e.g., Mediterranean Sea, Havel)
+6. other: Entities not fitting the above categories, including but not limited to:
+- Military units (e.g., Taktisches Luftwaffengeschwader 51 Immelmann, Tactical Air Force Squadron 74)
+- Organizations/missions (e.g., UN, NATO, UN-Mission, Resolute Support)
+- Operations/concepts (e.g., Quick Reaction Alert, Forward Air MedEvac, Explosive Ordnance Disposal)
+- Equipment components (e.g., HEA helmet, Head-Up-Display, Combo Pen Training Simulator)
+- Groups/forces (e.g., Daesh, Romanian army, Naval Special Forces Command)
+- Miscellaneous (e.g., ABC-Defense, CPR, Orion [unspecified special purpose])
+
+**DO NOT** extract entities without specific name (e.g.: gun, air base, fighter jet, weapon, soldier)

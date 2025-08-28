@@ -1,0 +1,1 @@
+2025-08-10 15:36:32,565 - modelscope - WARNING - The reference has been Deprecated in modelscope v1.4.0+, please use `from modelscope.msdatasets.dataset_cls.custom_datasets import TorchCustomDataset`
