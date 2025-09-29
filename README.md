@@ -184,3 +184,11 @@ All code is released for research purposes only and intended for validation by t
 The datasets we used are from  [CCKS 2025 GMNER Shared Task](https://www.osredm.com/competition/zstp2025/fingerpost). Some codes are based on the open-sourced codes [AdaSeq](https://github.com/modelscope/AdaSeq/tree/master) and [vLLM](https://github.com/vllm-project/vllm). Thanks for their great works!
 
 ## Citation
+```bibtex
+@article{tang2025refineg,
+  title={ReFineG: Synergizing Small Supervised Models and LLMs for Low-Resource Grounded Multimodal NER},
+  author={Tang, Jielong and Wang, Shuang and Wang, Zhenxing and Yu, Jianxing and Yin, Jian},
+  journal={arXiv preprint arXiv:2509.10975},
+  year={2025}
+}
+```
